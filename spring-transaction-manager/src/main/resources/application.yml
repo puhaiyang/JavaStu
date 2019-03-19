@@ -1,12 +1,13 @@
 spring:
   datasource:
     primary:
-      url: jdbc:mysql://localhost:3306/test?useUnicode=true&useSSL=true
+      jdbc-url: jdbc:mysql://localhost:3306/test?useUnicode=true&useSSL=true
       username: root
       password: root
-      driver-class-name: com.mysql.jdbc.Driver
+      driverClassName: com.mysql.jdbc.Driver
     secondary:
-      url: jdbc:mysql://localhost:3306/test2?useUnicode=true&useSSL=true
+      jdbc-url: jdbc:mysql://localhost:3306/test2?useUnicode=true&useSSL=true
       username: root
       password: root
-      driver-class-name: com.mysql.jdbc.Driver
+      driverClassName: com.mysql.jdbc.Driver
+#      https://my.oschina.net/chinesedragon/blog/1647846
