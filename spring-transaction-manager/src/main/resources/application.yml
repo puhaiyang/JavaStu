@@ -1,12 +1,12 @@
 spring:
   datasource:
     primary:
-      jdbc-url: jdbc:mysql://localhost:3306/test?useUnicode=true&useSSL=true
+      jdbc-url: jdbc:mysql://localhost:3306/test?useUnicode=true&useSSL=true&serverTimezone=GMT%2B8
       username: root
       password: root
       driverClassName: com.mysql.jdbc.Driver
     secondary:
-      jdbc-url: jdbc:mysql://localhost:3306/test2?useUnicode=true&useSSL=true
+      jdbc-url: jdbc:mysql://localhost:3306/test2?useUnicode=true&useSSL=true&serverTimezone=GMT%2B8
       username: root
       password: root
       driverClassName: com.mysql.jdbc.Driver
