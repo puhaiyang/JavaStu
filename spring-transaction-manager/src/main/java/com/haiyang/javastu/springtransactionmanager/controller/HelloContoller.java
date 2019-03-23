@@ -1,6 +1,9 @@
 package com.haiyang.javastu.springtransactionmanager.controller;
 
+import com.haiyang.javastu.springtransactionmanager.config.DatabaseContextHolder;
+import com.haiyang.javastu.springtransactionmanager.enums.DatabaseType;
 import com.haiyang.javastu.springtransactionmanager.service.StuService;
+import com.haiyang.javastu.springtransactionmanager.utils.DatasourceChangeStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +26,7 @@ public class HelloContoller {
 
     @GetMapping(value = "student/{stuId}")
     public String hello(@PathVariable(value = "stuId") Integer stuId) {
+//        DatasourceChangeStrategy.changeDatabaseIfNecessary(stuId);
         List<Map<String, Object>> stuList = stuService.getStuInfo(stuId);
         logger.info("stuId:{} result:{}", stuId, stuList.toString());
         return stuList.toString();

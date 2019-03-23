@@ -4,6 +4,7 @@ import com.haiyang.javastu.springtransactionmanager.config.DatabaseContextHolder
 import com.haiyang.javastu.springtransactionmanager.dao.StuDao;
 import com.haiyang.javastu.springtransactionmanager.enums.DatabaseType;
 import com.haiyang.javastu.springtransactionmanager.service.StuService;
+import com.haiyang.javastu.springtransactionmanager.utils.DatasourceChangeStrategy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,13 +22,7 @@ public class StuServiceImpl implements StuService {
     @Transactional
     @Override
     public List<Map<String, Object>> getStuInfo(Integer stuId) {
-        if (stuId != null) {
-            if (stuId.equals(1) || stuId.equals(2)) {
-                DatabaseContextHolder.setDatabaseType(DatabaseType.mytestdb);
-            } else {
-                DatabaseContextHolder.setDatabaseType(DatabaseType.mytestdb2);
-            }
-        }
+        DatasourceChangeStrategy.changeDatabaseIfNecessary(stuId);
         return stuDao.getStuInfoById(stuId);
     }
 }
