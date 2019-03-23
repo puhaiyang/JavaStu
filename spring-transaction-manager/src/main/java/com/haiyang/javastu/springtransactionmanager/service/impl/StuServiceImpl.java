@@ -5,6 +5,7 @@ import com.haiyang.javastu.springtransactionmanager.dao.StuDao;
 import com.haiyang.javastu.springtransactionmanager.enums.DatabaseType;
 import com.haiyang.javastu.springtransactionmanager.service.StuService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -16,6 +17,8 @@ public class StuServiceImpl implements StuService {
     @Resource
     private StuDao stuDao;
 
+    //加入注解，开启事物
+    @Transactional
     @Override
     public List<Map<String, Object>> getStuInfo(Integer stuId) {
         if (stuId != null) {
