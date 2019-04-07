@@ -11,4 +11,9 @@ public interface StuService {
      * @return result
      */
     List<Map<String, Object>> getStuInfo(Integer stuId);
+
+    /**
+     * @param name name
+     */
+    Integer getStuInfoByName(String name);
 }

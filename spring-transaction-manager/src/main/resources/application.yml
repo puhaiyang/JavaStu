@@ -11,3 +11,11 @@ spring:
       password: root
       driverClassName: com.mysql.jdbc.Driver
 #      https://my.oschina.net/chinesedragon/blog/1647846
+logging:
+  level:
+      com.haiyang.javastu.springtransactionmanager.dao: debug
+# https://www.jianshu.com/p/1a3f082aa70b
+mybatis:
+  configuration:
+#    log-impl: org.apache.ibatis.logging.log4j.Log4jImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

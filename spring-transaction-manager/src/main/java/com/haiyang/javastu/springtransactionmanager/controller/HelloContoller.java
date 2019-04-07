@@ -24,6 +24,11 @@ public class HelloContoller {
     private StuService stuService;
 
 
+    @GetMapping(value = "student/getIdByName")
+    public Integer getIdByName(String name) {
+        return stuService.getStuInfoByName(name);
+    }
+
     @GetMapping(value = "student/{stuId}")
     public String hello(@PathVariable(value = "stuId") Integer stuId) {
 //        DatasourceChangeStrategy.changeDatabaseIfNecessary(stuId);
